@@ -5,6 +5,14 @@
 //  Created by Russell Gaspard on 1/11/14.
 //  Copyright (c) 2014 Russell Gaspard. All rights reserved.
 //
+/*
+ 
+ Russ Gaspard
+ Project 1
+ Mobile Development
+ AOC2 1401
+ 
+ */
 
 #import "ViewController.h"
 
@@ -16,18 +24,82 @@
 
 - (void)viewDidLoad
 {
-    /*
-     
-     Russ Gaspard
-     Project 1
-     Mobile Development
-     AOC2 1401
-     
-     */
-    
+
     //Render labels to display data
     [self setupLabels];
     
+    //GUITAR
+    
+    //Create a guitar
+    GuitarInstrument *myGuitar = (GuitarInstrument*)[InstrumentFactory createNewInstrument:GUITAR];
+    
+    //set string type
+    [myGuitar setStringType:NYLON];
+    
+    //Calculate maintenance fee
+    int fee = [myGuitar calculateMaintenanceCost];
+    
+    //output Guitar data to labels
+    instrumentOneLabel.text = [NSString stringWithFormat:@"%@ : Maintenance Fee $%d", myGuitar.name, fee];
+    if(myGuitar.stringType == NYLON)
+    {
+        instrumentOneDetail.text = [NSString stringWithFormat:@"Includes nylon strings at %d dollars", myGuitar.stringsCostDollars];
+    }
+    else
+    {
+        instrumentOneDetail.text = [NSString stringWithFormat:@"Includes steel strings at %d dollars", myGuitar.stringsCostDollars];;
+    }
+    
+
+    
+    //VIOLIN
+    
+    //Create a violin
+    ViolinInstrument *myViolin = (ViolinInstrument*)[InstrumentFactory createNewInstrument:VIOLIN];
+    
+    //set string type
+    [myViolin setSize:FULL];
+    
+    //Calculate maintenance fee
+    fee = [myViolin calculateMaintenanceCost];
+    
+    //output Violin data to labels
+    instrumentTwoLabel.text = [NSString stringWithFormat:@"%@ : Maintenance Fee $%d", myViolin.name, fee];
+    if(myViolin.size == FULL)
+    {
+        instrumentTwoDetail.text = [NSString stringWithFormat:@"Includes full size bow rehair and strings at %d dollars", myViolin.stringsCostDollars];
+    }
+    else
+    {
+        instrumentTwoDetail.text = [NSString stringWithFormat:@"Includes small size bow rehair and strings at %d dollars", myViolin.stringsCostDollars];
+    }
+    
+    
+    //BANJO
+    
+    //Create a bajo
+    BanjoInstrument *myBanjo = (BanjoInstrument*)[InstrumentFactory createNewInstrument:BANJO];
+    
+    //set banjo type
+    [myBanjo setType:TENOR];
+    
+    //Calculate maintenance fee
+    fee = [myBanjo calculateMaintenanceCost];
+    
+    //output banjo data to labels
+    instrumentThreeLabel.text = [NSString stringWithFormat:@"%@ : Maintenance Fee $%d", myBanjo.name, fee];
+    
+    if(myBanjo.type == TENOR)
+    {
+        instrumentThreeDetail.text = [NSString stringWithFormat:@"Includes tenor banjo strings at %d dollars", myBanjo.stringsCostDollars];
+        
+    }
+    else
+    {
+        instrumentThreeDetail.text = [NSString stringWithFormat:@"Includes bluegrass banjo strings at %d dollars", myBanjo.stringsCostDollars];
+    }
+    
+
     
     
     
@@ -67,7 +139,7 @@
         [self.view addSubview:instrumentOneLabel];
     }
     instrumentOneDetail = [[UILabel alloc]initWithFrame:CGRectMake(10.0f, 150.0f, 300.0f, 70.0f)];
-    if (instrumentOneLabel != nil)
+    if (instrumentOneDetail != nil)
     {
         instrumentOneDetail.text = @"1instrumentOneDetail \n2instrumentOneDetail \n3iinstrumentOneDetail ";
         instrumentOneDetail.textColor = [UIColor blackColor];

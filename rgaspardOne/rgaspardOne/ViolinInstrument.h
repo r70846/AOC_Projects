@@ -10,4 +10,21 @@
 
 @interface ViolinInstrument : BaseInstrument
 
+//Define enum to record size of violin
+{
+    int sizeEnum;
+}
+
+typedef enum
+{
+    FULL,
+    THREE_QUARTER,
+    HALF
+    
+} sizeEnum;
+
+// data memebr to record what size violin
+@property sizeEnum size;
+
+
 @end
