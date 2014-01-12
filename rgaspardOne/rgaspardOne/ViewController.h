@@ -33,7 +33,7 @@
 }
 
 
-// AOC2 Project-1 Function headers
+// Function Headers
 - (void)setupLabels;
 
 @end

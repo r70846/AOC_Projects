@@ -21,6 +21,11 @@
 		607DE75918821B6A0080868E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607DE73B18821B6A0080868E /* UIKit.framework */; };
 		607DE76118821B6A0080868E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 607DE75F18821B6A0080868E /* InfoPlist.strings */; };
 		607DE76318821B6A0080868E /* rgaspardOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607DE76218821B6A0080868E /* rgaspardOneTests.m */; };
+		607DE76E18822EE00080868E /* InstrumentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 607DE76D18822EE00080868E /* InstrumentFactory.m */; };
+		607DE77118822F100080868E /* BaseInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 607DE77018822F100080868E /* BaseInstrument.m */; };
+		607DE77418822F3D0080868E /* GuitarInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 607DE77318822F3D0080868E /* GuitarInstrument.m */; };
+		607DE77718822F5A0080868E /* ViolinInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 607DE77618822F5A0080868E /* ViolinInstrument.m */; };
+		607DE77A18822F710080868E /* BanjoInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 607DE77918822F710080868E /* BanjoInstrument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,16 @@
 		607DE75E18821B6A0080868E /* rgaspardOneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgaspardOneTests-Info.plist"; sourceTree = "<group>"; };
 		607DE76018821B6A0080868E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		607DE76218821B6A0080868E /* rgaspardOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rgaspardOneTests.m; sourceTree = "<group>"; };
+		607DE76C18822EE00080868E /* InstrumentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentFactory.h; sourceTree = "<group>"; };
+		607DE76D18822EE00080868E /* InstrumentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentFactory.m; sourceTree = "<group>"; };
+		607DE76F18822F100080868E /* BaseInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInstrument.h; sourceTree = "<group>"; };
+		607DE77018822F100080868E /* BaseInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInstrument.m; sourceTree = "<group>"; };
+		607DE77218822F3D0080868E /* GuitarInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuitarInstrument.h; sourceTree = "<group>"; };
+		607DE77318822F3D0080868E /* GuitarInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuitarInstrument.m; sourceTree = "<group>"; };
+		607DE77518822F5A0080868E /* ViolinInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolinInstrument.h; sourceTree = "<group>"; };
+		607DE77618822F5A0080868E /* ViolinInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolinInstrument.m; sourceTree = "<group>"; };
+		607DE77818822F710080868E /* BanjoInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BanjoInstrument.h; sourceTree = "<group>"; };
+		607DE77918822F710080868E /* BanjoInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BanjoInstrument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +132,16 @@
 				607DE74918821B6A0080868E /* Main.storyboard */,
 				607DE74C18821B6A0080868E /* ViewController.h */,
 				607DE74D18821B6A0080868E /* ViewController.m */,
+				607DE76C18822EE00080868E /* InstrumentFactory.h */,
+				607DE76D18822EE00080868E /* InstrumentFactory.m */,
+				607DE76F18822F100080868E /* BaseInstrument.h */,
+				607DE77018822F100080868E /* BaseInstrument.m */,
+				607DE77218822F3D0080868E /* GuitarInstrument.h */,
+				607DE77318822F3D0080868E /* GuitarInstrument.m */,
+				607DE77518822F5A0080868E /* ViolinInstrument.h */,
+				607DE77618822F5A0080868E /* ViolinInstrument.m */,
+				607DE77818822F710080868E /* BanjoInstrument.h */,
+				607DE77918822F710080868E /* BanjoInstrument.m */,
 				607DE74F18821B6A0080868E /* Images.xcassets */,
 				607DE73E18821B6A0080868E /* Supporting Files */,
 			);
@@ -250,8 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				607DE74E18821B6A0080868E /* ViewController.m in Sources */,
+				607DE77118822F100080868E /* BaseInstrument.m in Sources */,
+				607DE77718822F5A0080868E /* ViolinInstrument.m in Sources */,
 				607DE74818821B6A0080868E /* AppDelegate.m in Sources */,
 				607DE74418821B6A0080868E /* main.m in Sources */,
+				607DE77418822F3D0080868E /* GuitarInstrument.m in Sources */,
+				607DE76E18822EE00080868E /* InstrumentFactory.m in Sources */,
+				607DE77A18822F710080868E /* BanjoInstrument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
