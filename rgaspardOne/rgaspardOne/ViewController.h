@@ -9,5 +9,31 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    /*
+     
+     Russ Gaspard
+     Project 1
+     Mobile Development
+     AOC2 1401
+     
+     */
+    
+    UILabel *assignmentLabel;
+    
+    UILabel *instrumentOneLabel;
+    UILabel *instrumentOneDetail;
+    
+    UILabel *instrumentTwoLabel;
+    UILabel *instrumentTwoDetail;
+    
+    UILabel *instrumentThreeLabel;
+    UILabel *instrumentThreeDetail;
+
+}
+
+
+// AOC2 Project-1 Function headers
+- (void)setupLabels;
 
 @end
