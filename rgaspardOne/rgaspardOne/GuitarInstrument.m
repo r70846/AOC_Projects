@@ -47,8 +47,8 @@
 // overwrite the calculation method
 -(int)calculateMaintenanceCost
 {
-    //Standard labor fee from base class
-    int fee = self.maintenenceFeeDollars;
+    //Standard string & labor fee from base class
+    int fee = [super calculateMaintenanceCost];
     
     //Add extra 15 dollar chanrge to stretch NYLON strings (extra labor...)
     if (self.stringType == NYLON)

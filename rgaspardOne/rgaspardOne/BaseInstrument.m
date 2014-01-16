@@ -19,7 +19,7 @@
 @implementation BaseInstrument
 
 // use sythesize to create get and set properties
-@synthesize name, stringsNumber,stringsCostDollars, maintenenceFeeDollars;
+@synthesize name, stringsNumber,stringsCostDollars;
 
 -(id)init
 {
@@ -29,7 +29,6 @@
         [self setName:nil];
         [self setStringsNumber:1];
         [self setStringsCostDollars:0];
-        [self setMaintenenceFeeDollars: [self calculateMaintenanceCost]];
     }
     return self;
 }
@@ -43,7 +42,7 @@
     int fee = (2 * stringsNumber) + stringsCostDollars;
     
     //Log result
-    NSLog(@"Maintenance Fee: %d", fee);
+    //NSLog(@"Maintenance Fee: %d", fee);
     
     return fee;
 }

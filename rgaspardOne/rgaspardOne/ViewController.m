@@ -98,10 +98,7 @@
     {
         instrumentThreeDetail.text = [NSString stringWithFormat:@"Includes bluegrass banjo strings at %d dollars", myBanjo.stringsCostDollars];
     }
-    
 
-    
-    
     
     
     [super viewDidLoad];

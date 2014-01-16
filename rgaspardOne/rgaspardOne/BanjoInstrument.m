@@ -29,7 +29,7 @@
         //name instrument
         [self setName: @"Banjo"];
         
-        //Violin Strings cost
+        //Banjo Strings cost
         [self setStringsCostDollars:10];
         
         //set banjo type
@@ -53,8 +53,8 @@
 -(int)calculateMaintenanceCost
 {
     
-    //Standard labor fee from base class
-    int fee = self.maintenenceFeeDollars;
+    //Standard string & labor fee from base class
+    int fee = [super calculateMaintenanceCost];
     
     //Add extra $5 charge for adjusting tension on the banjo's drum head)
     fee = fee + 5;

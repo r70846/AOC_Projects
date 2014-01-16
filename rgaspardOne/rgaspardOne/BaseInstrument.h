@@ -33,8 +33,6 @@ typedef enum
 @property int stringsNumber;
 @property int stringsCostDollars;
 
-@property int maintenenceFeeDollars;
-
 // initialize
 -(id)init;
 

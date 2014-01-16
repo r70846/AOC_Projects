@@ -41,10 +41,10 @@
 -(int)calculateMaintenanceCost
 {
     
-    //Standard labor fee from base class
-    int fee = self.maintenenceFeeDollars;
+    //Standard string & labor fee from base class
+    int fee = [super calculateMaintenanceCost];
 
-    //Add extra $10 charge for restringing the bow)
+    //Add extra $10 charge to rehair the bow)
         fee = fee + 20;
 
     //Add extra 5 dollar chanrge it its half size (harder to work with...)
