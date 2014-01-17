@@ -18,5 +18,28 @@
 #import "InstrumentFactory.h"
 
 @interface ViewController : UIViewController
+{
+    
+    
+IBOutlet UITextField *results;
+    
+IBOutlet UIStepper *stepperControl;
+    
+    
+IBOutlet UIButton *button1;
+IBOutlet UIButton *button2;
+IBOutlet UIButton *button3;
+    
+IBOutlet UISegmentedControl *segmentControl;
+    
+int quantity;
+    
+    
+}
+
+-(IBAction)onStep:(id)sender;
+-(IBAction)onClick:(id)sender;
+-(IBAction)onSegmentChange:(id)sender;
+
 
 @end
