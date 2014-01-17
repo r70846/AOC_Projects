@@ -15,6 +15,7 @@
  */
 
 #import "ViewController.h"
+#import "InfoView.h"
 
 @interface ViewController ()
 
@@ -25,7 +26,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+
+    
+    
+    // Set up UI
+    self.view.backgroundColor = [UIColor colorWithRed:0.827 green:0.827 blue:0.827 alpha:1]; /*#d3d3d3 gray*/
+    calculateBtn.enabled = false;
+    stepperControl.value = 1;
+    
+    // Initialize variables
+    plural = @"";
+    chosen = @"Choose Instrument";     //'user propt' is instrument variable...
+    quantity = stepperControl.value;
+
+    // diplay propt in results field
+    results.text = [NSString stringWithFormat:@"%d %@%@", quantity, chosen, plural];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,6 +51,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+// This function adds the "S" when appropriate
+-(void)pluralFix
+{
+    if(quantity == 1)
+    {
+        plural = @"";
+    }else
+    {
+        plural = @"s";
+    }
+    
+}
+
+
+// This functions controlls the stepper
 -(IBAction)onStep:(id)sender
 {
     UIStepper *stepControl = (UIStepper*)sender;
@@ -41,42 +74,99 @@
     if(stepControl != nil)
     {
         quantity = stepControl.value;
-        results.text = [NSString stringWithFormat:@"Step value=%d", quantity];
+        [self pluralFix];
+        results.text = [NSString stringWithFormat:@"%d %@%@", quantity, chosen, plural];
     }
     
     
 }
 
+
+//This function reacts to any button push
 -(IBAction)onClick:(id)sender
 {
     UIButton *btn = (UIButton*)sender;
     if(btn != nil)
     {
         int tag = btn.tag;
-        if(tag == 0)
+        
+        
+        if(tag == 0) //Calculate Button - calculate & Display the Fee Now
         {
-			button1.enabled = false;
-            button2.enabled = true;
-            button3.enabled = true;
-        }else if(tag == 1)
-        {
-			button1.enabled = true;
-            button2.enabled = false;
-            button3.enabled = true;
-        }else if(tag == 2)
-        {
-			button1.enabled = true;
-            button2.enabled = true;
-            button3.enabled = false;
+            
+            int totalFee = quantity * feePerInstrument;
+            results.text = [NSString stringWithFormat:@"%d %@%@ : $%d", quantity, chosen, plural, totalFee];
         }else
         {
-        	//do nothing
-        }
-
+            if(tag == 1) //Guitar Chosen
+            {
+                //Record Choice
+                chosen = @"Guitar";
+            
+                //Create a guitar
+                GuitarInstrument *instrument = (GuitarInstrument*)[InstrumentFactory createNewInstrument:GUITAR];
+            
+                //set string type
+                [instrument setStringType:NYLON];
+            
+                //Arrange Button States
+                button1.enabled = false;
+                button2.enabled = true;
+                calculateBtn.enabled = true;
+            
+                //Calculate fee for signle instrument behind the scenes
+                feePerInstrument = [instrument calculateMaintenanceCost];
+            
+            }else if(tag == 2) //Violin Chosen
+            {
+            
+                //Record Choice
+                chosen = @"Violin";
+            
+                //Create a violin
+                ViolinInstrument *instrument = (ViolinInstrument*)[InstrumentFactory createNewInstrument:VIOLIN];
+            
+                //set string type
+                [instrument setSize:FULL];
+            
+                //Arrange Button States
+                button1.enabled = true;
+                button2.enabled = false;
+                button3.enabled = true;
+                calculateBtn.enabled = true;
+            
+                //Calculate fee for signle instrument behind the scenes
+                feePerInstrument = [instrument calculateMaintenanceCost];
+            
+            }else if(tag == 3) //Banjo Chosen
+            {
+            
+                //Record Choice
+                chosen = @"Banjo";
+            
+                //Create a banjo
+                BanjoInstrument *instrument = (BanjoInstrument*)[InstrumentFactory createNewInstrument:BANJO];
+            
+                //set banjo type
+                [instrument setType:TENOR];
+            
+                //Arrange Button States
+                button1.enabled = true;
+                button2.enabled = true;
+                button3.enabled = false;
+                calculateBtn.enabled = true;
+            
+                //Calculate fee for signle instrument behind the scenes
+                feePerInstrument = [instrument calculateMaintenanceCost];
+            }
         
+            //Display quantity and instrument but not calculation yet...
+            results.text = [NSString stringWithFormat:@"%d %@%@", quantity, chosen, plural];
+        }
     }
 }
 
+// This function accepts input form the segmented control and changes the background color
 -(IBAction)onSegmentChange:(id)sender
 {
     UISegmentedControl *segControl = (UISegmentedControl*)sender;
@@ -88,7 +178,7 @@
         
         if(selectedIndex == 0)
         {
-			self.view.backgroundColor = [UIColor grayColor];
+            self.view.backgroundColor = [UIColor colorWithRed:0.827 green:0.827 blue:0.827 alpha:1]; /*#d3d3d3 gray*/
         }else if(selectedIndex == 1)
         {
 			self.view.backgroundColor = [UIColor colorWithRed:0.6 green:0.8 blue:1 alpha:1]; /*#99ccff Sky Blue */;
@@ -102,6 +192,16 @@
         {
         	//do nothing
         }
+    }
+}
+
+
+-(IBAction)onNav:(id)sender
+{
+    InfoView *infoView = [[InfoView alloc] initWithNibName:@"InfoView" bundle:nil];
+    if(infoView != nil)
+    {
+        [self presentViewController:infoView animated:true completion:nil];
     }
 }
 @end

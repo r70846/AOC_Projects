@@ -21,22 +21,30 @@
 {
     
     
-IBOutlet UITextField *results;
+    IBOutlet UITextField *results;
     
-IBOutlet UIStepper *stepperControl;
+    IBOutlet UIStepper *stepperControl;
     
     
-IBOutlet UIButton *button1;
-IBOutlet UIButton *button2;
-IBOutlet UIButton *button3;
+    IBOutlet UIButton *button1;
+    IBOutlet UIButton *button2;
+    IBOutlet UIButton *button3;
     
-IBOutlet UISegmentedControl *segmentControl;
+    IBOutlet UIButton *calculateBtn;
     
-int quantity;
+    IBOutlet UISegmentedControl *segmentControl;
     
+    int quantity;
+    int feePerInstrument;
+    
+    NSString *chosen;
+    NSString *plural;
     
 }
 
+-(void)pluralFix;
+
+-(IBAction)onNav:(id)sender;
 -(IBAction)onStep:(id)sender;
 -(IBAction)onClick:(id)sender;
 -(IBAction)onSegmentChange:(id)sender;

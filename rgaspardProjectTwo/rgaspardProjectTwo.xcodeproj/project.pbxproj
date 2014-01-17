@@ -12,6 +12,11 @@
 		604190861888B087009D7BE1 /* GuitarInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 604190831888B087009D7BE1 /* GuitarInstrument.m */; };
 		604190871888B087009D7BE1 /* InstrumentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 604190851888B087009D7BE1 /* InstrumentFactory.m */; };
 		6041908A1888B095009D7BE1 /* ViolinInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 604190891888B095009D7BE1 /* ViolinInstrument.m */; };
+		6041908C1888CCF2009D7BE1 /* banjo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6041908B1888CCF2009D7BE1 /* banjo.jpg */; };
+		6041908E1888CCFB009D7BE1 /* fiddle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6041908D1888CCFB009D7BE1 /* fiddle.jpg */; };
+		604190921888CDDD009D7BE1 /* guitar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 604190911888CDDD009D7BE1 /* guitar.jpg */; };
+		604190941888E948009D7BE1 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 604190931888E948009D7BE1 /* InfoView.xib */; };
+		604190971888EAEA009D7BE1 /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 604190961888EAEA009D7BE1 /* InfoView.m */; };
 		A21C4CDB17D7878600C6C3BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21C4CDA17D7878600C6C3BB /* UIKit.framework */; };
 		A21C4CDD17D7878600C6C3BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21C4CDC17D7878600C6C3BB /* Foundation.framework */; };
 		A21C4CDF17D7878600C6C3BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21C4CDE17D7878600C6C3BB /* CoreGraphics.framework */; };
@@ -36,6 +41,12 @@
 		604190851888B087009D7BE1 /* InstrumentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentFactory.m; sourceTree = "<group>"; };
 		604190881888B095009D7BE1 /* ViolinInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolinInstrument.h; sourceTree = "<group>"; };
 		604190891888B095009D7BE1 /* ViolinInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolinInstrument.m; sourceTree = "<group>"; };
+		6041908B1888CCF2009D7BE1 /* banjo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banjo.jpg; sourceTree = "<group>"; };
+		6041908D1888CCFB009D7BE1 /* fiddle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fiddle.jpg; sourceTree = "<group>"; };
+		604190911888CDDD009D7BE1 /* guitar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = guitar.jpg; path = baseProject/guitar.jpg; sourceTree = "<group>"; };
+		604190931888E948009D7BE1 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		604190951888EAEA009D7BE1 /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
+		604190961888EAEA009D7BE1 /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
 		A21C4CD717D7878600C6C3BB /* rgaspardProjectTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rgaspardProjectTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21C4CDA17D7878600C6C3BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A21C4CDC17D7878600C6C3BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +82,7 @@
 		A21C4CCE17D7878600C6C3BB = {
 			isa = PBXGroup;
 			children = (
+				604190911888CDDD009D7BE1 /* guitar.jpg */,
 				A21C4CE017D7878600C6C3BB /* baseProject */,
 				A21C4CD917D7878600C6C3BB /* Frameworks */,
 				A21C4CD817D7878600C6C3BB /* Products */,
@@ -102,6 +114,7 @@
 				A21C4CEA17D7878600C6C3BB /* AppDelegate.m */,
 				A21C4CF217D7878600C6C3BB /* ViewController.h */,
 				6041907C1888B01A009D7BE1 /* BanjoInstrument.h */,
+				604190931888E948009D7BE1 /* InfoView.xib */,
 				6041907D1888B01A009D7BE1 /* BanjoInstrument.m */,
 				604190881888B095009D7BE1 /* ViolinInstrument.h */,
 				604190891888B095009D7BE1 /* ViolinInstrument.m */,
@@ -112,7 +125,11 @@
 				6041907E1888B01A009D7BE1 /* BaseInstrument.h */,
 				6041907F1888B01A009D7BE1 /* BaseInstrument.m */,
 				A21C4CF317D7878600C6C3BB /* ViewController.m */,
+				604190951888EAEA009D7BE1 /* InfoView.h */,
+				604190961888EAEA009D7BE1 /* InfoView.m */,
 				A21C4CF517D7878600C6C3BB /* ViewController.xib */,
+				6041908D1888CCFB009D7BE1 /* fiddle.jpg */,
+				6041908B1888CCF2009D7BE1 /* banjo.jpg */,
 				A21C4CE117D7878600C6C3BB /* Supporting Files */,
 			);
 			path = baseProject;
@@ -183,9 +200,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6041908C1888CCF2009D7BE1 /* banjo.jpg in Resources */,
+				6041908E1888CCFB009D7BE1 /* fiddle.jpg in Resources */,
 				A21C4CE517D7878600C6C3BB /* InfoPlist.strings in Resources */,
+				604190941888E948009D7BE1 /* InfoView.xib in Resources */,
 				A21C4CED17D7878600C6C3BB /* Default.png in Resources */,
 				A21C4CEF17D7878600C6C3BB /* Default@2x.png in Resources */,
+				604190921888CDDD009D7BE1 /* guitar.jpg in Resources */,
 				A21C4CF117D7878600C6C3BB /* Default-568h@2x.png in Resources */,
 				A21C4CF717D7878600C6C3BB /* ViewController.xib in Resources */,
 			);
@@ -206,6 +227,7 @@
 				604190861888B087009D7BE1 /* GuitarInstrument.m in Sources */,
 				604190801888B01A009D7BE1 /* BanjoInstrument.m in Sources */,
 				6041908A1888B095009D7BE1 /* ViolinInstrument.m in Sources */,
+				604190971888EAEA009D7BE1 /* InfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
