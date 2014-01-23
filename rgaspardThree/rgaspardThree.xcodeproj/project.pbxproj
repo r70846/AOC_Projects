@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602443E718916D3500448A40 /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 602443E518916D3500448A40 /* EventView.m */; };
+		602443E818916D3500448A40 /* EventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602443E618916D3500448A40 /* EventView.xib */; };
 		A21C4CDB17D7878600C6C3BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21C4CDA17D7878600C6C3BB /* UIKit.framework */; };
 		A21C4CDD17D7878600C6C3BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21C4CDC17D7878600C6C3BB /* Foundation.framework */; };
 		A21C4CDF17D7878600C6C3BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21C4CDE17D7878600C6C3BB /* CoreGraphics.framework */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		602443E418916D3500448A40 /* EventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventView.h; sourceTree = "<group>"; };
+		602443E518916D3500448A40 /* EventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventView.m; sourceTree = "<group>"; };
+		602443E618916D3500448A40 /* EventView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventView.xib; sourceTree = "<group>"; };
 		A21C4CD717D7878600C6C3BB /* rgaspardThree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rgaspardThree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21C4CDA17D7878600C6C3BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A21C4CDC17D7878600C6C3BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +93,9 @@
 				A21C4CF217D7878600C6C3BB /* ViewController.h */,
 				A21C4CF317D7878600C6C3BB /* ViewController.m */,
 				A21C4CF517D7878600C6C3BB /* ViewController.xib */,
+				602443E418916D3500448A40 /* EventView.h */,
+				602443E518916D3500448A40 /* EventView.m */,
+				602443E618916D3500448A40 /* EventView.xib */,
 				A21C4CE117D7878600C6C3BB /* Supporting Files */,
 			);
 			path = baseProject;
@@ -161,6 +169,7 @@
 				A21C4CE517D7878600C6C3BB /* InfoPlist.strings in Resources */,
 				A21C4CED17D7878600C6C3BB /* Default.png in Resources */,
 				A21C4CEF17D7878600C6C3BB /* Default@2x.png in Resources */,
+				602443E818916D3500448A40 /* EventView.xib in Resources */,
 				A21C4CF117D7878600C6C3BB /* Default-568h@2x.png in Resources */,
 				A21C4CF717D7878600C6C3BB /* ViewController.xib in Resources */,
 			);
@@ -176,6 +185,7 @@
 				A21C4CE717D7878600C6C3BB /* main.m in Sources */,
 				A21C4CEB17D7878600C6C3BB /* AppDelegate.m in Sources */,
 				A21C4CF417D7878600C6C3BB /* ViewController.m in Sources */,
+				602443E718916D3500448A40 /* EventView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
