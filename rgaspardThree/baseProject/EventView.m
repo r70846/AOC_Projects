@@ -20,6 +20,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        delegate = nil;
         // Custom initialization
     }
     return self;
@@ -48,13 +50,16 @@
         
         if(tag == 0) //If we have the save button..
         {
+           
+            if(delegate != nil)
+            {
+                
+                [delegate DidClose: inputField.text];
+            }
+            
             //Dismiss the event view
             [self dismissViewControllerAnimated:true completion:nil];
             
-            if(delegate != nil)
-            {
-                [delegate DidClose: inputField.text];
-            }
         }
         else if(tag == 1)
         {
