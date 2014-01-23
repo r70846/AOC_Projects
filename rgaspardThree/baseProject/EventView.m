@@ -35,4 +35,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(IBAction)onClick:(id)sender
+{
+    UIButton *button = (UIButton*)sender;
+    
+    if(button != nil)
+    {
+        int tag = button.tag;
+        
+        if(tag == 0) //If we have the save button..
+        {
+            //Dismiss the event view
+            [self dismissViewControllerAnimated:true completion:nil];
+            
+           // if(delegate != nil)
+           // {
+           //     [delegate DidClose: inputField.text];
+           // }
+        }
+        else if(tag == 1)
+        {
+            //Retract the keyboard
+            [inputField resignFirstResponder];
+        }
+    }
+}
+
 @end

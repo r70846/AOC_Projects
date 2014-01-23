@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface EventView : UIViewController
+{
+    //Get access to text field
+    IBOutlet UITextField *inputField;
+}
+
+//Define function to catch button clicks on event view
+-(IBAction)onClick:(id)sender;
+
 
 @end

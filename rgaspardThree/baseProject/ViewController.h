@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventView.h"
 
 @interface ViewController : UIViewController
+{
+    
+}
+
+
+//Define function to catch button click on main view
+-(IBAction)onButtonClick:(id)sender;
 
 @end
