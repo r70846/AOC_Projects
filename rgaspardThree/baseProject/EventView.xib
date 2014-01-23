@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventView">
             <connections>
                 <outlet property="inputField" destination="hmL-h1-oD3" id="dQ1-in-uNk"/>
+                <outlet property="picker" destination="Gqp-gx-ghJ" id="rB9-G0-Pq2"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>

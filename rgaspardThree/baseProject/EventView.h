@@ -19,12 +19,22 @@
 
 @interface EventView : UIViewController
 {
+    NSDate *minDateTime;
+    
     // Reference to the delegate
     id<EventViewDelegate> delegate;
     
     //Get access to text field
     IBOutlet UITextField *inputField;
+    
+    //Get access to date/time picker
+    IBOutlet UIDatePicker *picker;
 }
+
+
+
+
+
 
 //Define function to catch button clicks on event view
 -(IBAction)onClick:(id)sender;
