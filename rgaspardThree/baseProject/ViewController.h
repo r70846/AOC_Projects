@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "EventView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <EventViewDelegate>
 {
-    
+    //Get access to text view to list events
+    IBOutlet UITextView *eventList;
 }
 
 

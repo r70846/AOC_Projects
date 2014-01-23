@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol EventViewDelegate <NSObject>
+
+//Message back to main view on close
+@required
+-(void)DidClose:(NSString*)eventString;
+
+@end
+
+
 @interface EventView : UIViewController
 {
+    // Reference to the delegate
+    id<EventViewDelegate> delegate;
+    
     //Get access to text field
     IBOutlet UITextField *inputField;
 }
@@ -17,5 +29,8 @@
 //Define function to catch button clicks on event view
 -(IBAction)onClick:(id)sender;
 
+
+//Declare as property to access delegate from outside
+@property (strong) id<EventViewDelegate> delegate;
 
 @end

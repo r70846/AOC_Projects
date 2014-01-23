@@ -32,11 +32,17 @@
     EventView *eventView = [[EventView alloc] initWithNibName:@"EventView" bundle:nil];
     if(eventView != nil)
     {
+        //Let event view know this is the delegate
+        eventView.delegate = self;
         
-        //eventView.delegate = self; //Let event view know this is the delegate
-        
-        [self presentViewController:eventView animated:true completion:nil]; //present event view
+        //present event view
+        [self presentViewController:eventView animated:true completion:nil];
     }
+}
+
+-(void)DidClose:(NSString*)eventString
+{
+    eventList.text = eventString;
 }
 
 @end

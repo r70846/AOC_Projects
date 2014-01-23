@@ -14,6 +14,8 @@
 
 @implementation EventView
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,10 +51,10 @@
             //Dismiss the event view
             [self dismissViewControllerAnimated:true completion:nil];
             
-           // if(delegate != nil)
-           // {
-           //     [delegate DidClose: inputField.text];
-           // }
+            if(delegate != nil)
+            {
+                [delegate DidClose: inputField.text];
+            }
         }
         else if(tag == 1)
         {
