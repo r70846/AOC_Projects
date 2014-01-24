@@ -42,7 +42,11 @@
 
 -(void)DidClose:(NSString*)eventString
 {
-    eventList.text = eventString;
+    
+    
+    NSString *list = [[NSString alloc] initWithFormat:@"%@%@%@%@",eventList.text, @"New Event: ",eventString, @"\n\n"];
+    
+    eventList.text = list;
 }
 
 @end

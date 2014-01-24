@@ -51,9 +51,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
 -(IBAction)onClick:(id)sender
 {
     UIButton *button = (UIButton*)sender;
@@ -64,23 +61,46 @@
         
         if(tag == 0) //If we have the save button..
         {
-           
-            if(delegate != nil)
+            //Do some minimal data validation
+            if([inputField.text isEqualToString:@""])
             {
+
+            }
+            else
+            {
+                //Format the users date and time choice
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                if (dateFormatter != nil)
+                {
+                    [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
+                }
+            
+                //Build the chosen date into a string based on my format
+                NSString *dateTime = [[NSString alloc] initWithFormat:@"%@", [dateFormatter stringFromDate: picker.date]];
+            
+                NSString *eventText = [[NSString alloc] initWithFormat:@"%@%@%@", inputField.text, @"\n", dateTime];
+           
+                if(delegate != nil)
+                {
                 
-                [delegate DidClose: inputField.text];
+                    [delegate DidClose: eventText];
+                    //[delegate DidClose: inputField.text];
+                
+                }
+
             }
             
             //Dismiss the event view
             [self dismissViewControllerAnimated:true completion:nil];
             
         }
-        else if(tag == 1)
+        else if(tag == 1) //If we have the close keyboard button..
         {
             //Retract the keyboard
             [inputField resignFirstResponder];
         }
     }
 }
+
 
 @end

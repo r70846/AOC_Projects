@@ -19,7 +19,6 @@
 
 @interface EventView : UIViewController
 {
-    NSDate *minDateTime;
     
     // Reference to the delegate
     id<EventViewDelegate> delegate;
@@ -31,14 +30,8 @@
     IBOutlet UIDatePicker *picker;
 }
 
-
-
-
-
-
 //Define function to catch button clicks on event view
 -(IBAction)onClick:(id)sender;
-
 
 //Declare as property to access delegate from outside
 @property (strong) id<EventViewDelegate> delegate;
