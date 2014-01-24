@@ -5,6 +5,14 @@
 //  Created on 9/4/13.
 //  Copyright (c) 2013 FullSail. All rights reserved.
 //
+/*
+ 
+ Russ Gaspard
+ Project 3
+ Mobile Development
+ AOC2 1401
+ 
+ */
 
 #import "ViewController.h"
 #import "EventView.h"
@@ -43,7 +51,8 @@
 -(void)DidClose:(NSString*)eventString
 {
     
-    
+    //Format the list in textView to add new event
+    // Concat with prior event List, "New Event: " text, new event string from eventView, and then two newlines
     NSString *list = [[NSString alloc] initWithFormat:@"%@%@%@%@",eventList.text, @"New Event: ",eventString, @"\n\n"];
     
     eventList.text = list;

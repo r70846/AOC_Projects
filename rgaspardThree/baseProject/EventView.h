@@ -5,12 +5,20 @@
 //  Created by Russell Gaspard on 1/23/14.
 //  Copyright (c) 2014 FullSail. All rights reserved.
 //
+/*
+ 
+ Russ Gaspard
+ Project 3
+ Mobile Development
+ AOC2 1401
+ 
+ */
 
 #import <UIKit/UIKit.h>
 
 @protocol EventViewDelegate <NSObject>
 
-//Message back to main view on close
+//Require this function to message back to main view on close
 @required
 -(void)DidClose:(NSString*)eventString;
 
