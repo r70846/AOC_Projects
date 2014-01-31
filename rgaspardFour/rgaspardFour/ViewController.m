@@ -27,23 +27,6 @@
 - (void)viewDidLoad
 {
     
-    //Initialize event list
-    eventList = [[NSMutableString alloc] init];
-
-/*
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    if(defaults != nil)
-    {
-        //Get stored list
-        eventList = [defaults objectForKey:@"list"];
-        
-        //Display List
-        eventsDisplay.text = eventList;
-    }
-*/
-
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -60,6 +43,23 @@
     rightSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(onRightSwipe:)];
     rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeLabelRight addGestureRecognizer: rightSwiper];
+    
+    
+    //Initialize event list
+    eventList = [[NSMutableString alloc] init];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if(defaults != nil)
+    {
+        //Get stored list
+        NSString *temp = [defaults objectForKey:@"list"];
+        
+        NSLog(@"%@", temp);
+        //Display List
+        //eventsDisplay.text = eventList;
+    }
     
     
     [super viewWillAppear:animated];
@@ -90,10 +90,9 @@
 
 -(IBAction)onClick:(id)selector
 {
+
     
-    NSLog(@"MAde it here!");
-    
-    //Save full even tlist to user defultd (Built in dictionary)
+    //Save full event list to user defaults (Built in dictionary)
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(defaults != nil)
     {
@@ -102,6 +101,10 @@
         
         //saves the data
         [defaults synchronize];
+        
+        
+        
+        NSLog(@"MAde it there?");
     }
 }
 
