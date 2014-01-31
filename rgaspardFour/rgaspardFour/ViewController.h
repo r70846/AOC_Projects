@@ -30,10 +30,12 @@
     
     
     NSMutableString* eventList;
+    
+    bool defaultsLoaded;
+    
 }
 
 @property NSString *inputText;
-
 
 //Reference to my method for button click
 -(IBAction)onClick:(id)selector;

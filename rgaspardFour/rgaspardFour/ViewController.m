@@ -29,6 +29,20 @@
     
     //Initialize event list
     eventList = [[NSMutableString alloc] init];
+
+/*
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    if(defaults != nil)
+    {
+        //Get stored list
+        eventList = [defaults objectForKey:@"list"];
+        
+        //Display List
+        eventsDisplay.text = eventList;
+    }
+*/
+
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -51,13 +65,24 @@
     [super viewWillAppear:animated];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+
+
+
+    
+    [super viewDidAppear:animated];
+}
+
+
 
 -(IBAction)back:(UIStoryboardSegue*)segue
 {
     
+    //Add new event to list and display
     [eventList appendString:inputText];
     [eventList appendString:@"\n\n"];
-    eventsDisplay.text = eventList;
+     eventsDisplay.text = eventList;
     
     //NSLog(@"%@", inputText);
 }
@@ -65,8 +90,16 @@
 
 -(IBAction)onClick:(id)selector
 {
-    
-    
+    //Save full even tlist to user defultd (Built in dictionary)
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(defaults != nil)
+    {
+        
+        [defaults setObject:eventList forKey:@"list"];
+        
+        //saves the data
+        [defaults synchronize];
+    }
 }
 
 -(void)onRightSwipe:(UISwipeGestureRecognizer*)recognizer
