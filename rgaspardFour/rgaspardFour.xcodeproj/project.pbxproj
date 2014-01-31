@@ -21,6 +21,7 @@
 		602420E5189B37B50045F25E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602420C7189B37B50045F25E /* UIKit.framework */; };
 		602420ED189B37B50045F25E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 602420EB189B37B50045F25E /* InfoPlist.strings */; };
 		602420EF189B37B50045F25E /* rgaspardFourTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 602420EE189B37B50045F25E /* rgaspardFourTests.m */; };
+		602420FA189B3C200045F25E /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602420F9189B3C200045F25E /* AddEventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		602420EA189B37B50045F25E /* rgaspardFourTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgaspardFourTests-Info.plist"; sourceTree = "<group>"; };
 		602420EC189B37B50045F25E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		602420EE189B37B50045F25E /* rgaspardFourTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rgaspardFourTests.m; sourceTree = "<group>"; };
+		602420F8189B3C200045F25E /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		602420F9189B3C200045F25E /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				602420D2189B37B50045F25E /* AppDelegate.h */,
 				602420D3189B37B50045F25E /* AppDelegate.m */,
 				602420D5189B37B50045F25E /* Main.storyboard */,
+				602420F8189B3C200045F25E /* AddEventViewController.h */,
+				602420F9189B3C200045F25E /* AddEventViewController.m */,
 				602420D8189B37B50045F25E /* ViewController.h */,
 				602420D9189B37B50045F25E /* ViewController.m */,
 				602420DB189B37B50045F25E /* Images.xcassets */,
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				602420DA189B37B50045F25E /* ViewController.m in Sources */,
+				602420FA189B3C200045F25E /* AddEventViewController.m in Sources */,
 				602420D4189B37B50045F25E /* AppDelegate.m in Sources */,
 				602420D0189B37B50045F25E /* main.m in Sources */,
 			);

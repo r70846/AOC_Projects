@@ -9,5 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    IBOutlet UILabel *swipeLabelRight;
+    
+    //Gesture Recognizer
+    UISwipeGestureRecognizer *rightSwiper;
+    
+}
+
+//Reference to my method for button click
+-(IBAction)onClick:(id)selector;
+
 
 @end
