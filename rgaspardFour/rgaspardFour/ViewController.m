@@ -26,6 +26,23 @@
 
 - (void)viewDidLoad
 {
+    //Initialize event list
+    eventList = [[NSMutableString alloc] init];
+    
+    //Create defaults built in dictionary
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if(defaults != nil)
+    {
+        //Get stored list
+        NSString *temp = [defaults objectForKey:@"list"];
+        
+        //Add loaded events to list and display
+        [eventList appendString:temp];
+        
+        //Display List
+        eventsDisplay.text = temp;
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -39,27 +56,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-
     rightSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(onRightSwipe:)];
     rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeLabelRight addGestureRecognizer: rightSwiper];
-    
-    
-    //Initialize event list
-    eventList = [[NSMutableString alloc] init];
-    
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    if(defaults != nil)
-    {
-        //Get stored list
-        NSString *temp = [defaults objectForKey:@"list"];
-        
-        NSLog(@"%@", temp);
-        //Display List
-        //eventsDisplay.text = eventList;
-    }
     
     
     [super viewWillAppear:animated];
@@ -69,8 +68,6 @@
 {
 
 
-
-    
     [super viewDidAppear:animated];
 }
 
@@ -90,23 +87,36 @@
 
 -(IBAction)onClick:(id)selector
 {
-
-    
-    //Save full event list to user defaults (Built in dictionary)
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(defaults != nil)
+    UIButton *button = (UIButton*)selector;
+    if(button != nil)
     {
+    	//Get tag from calling button
+        int tag = button.tag;
         
-        [defaults setObject:eventList forKey:@"list"];
+   		//Get user defaults (Built in dictionary) to save or clear
+   		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
-        //saves the data
-        [defaults synchronize];
-        
-        
-        
-        NSLog(@"MAde it there?");
-    }
+		if(defaults != nil) //Make sure we have defaults dictionary to save or clear
+		{
+            
+        	if(tag == 0) //Clear defaults and display
+        	{
+ 				NSString *tmp = @"";
+				[defaults setObject:tmp forKey:@"list"];
+                 eventsDisplay.text = tmp;
+        	}
+        	else if (tag == 1) //Save events in display list
+        	{
+	 			NSString *tmp = eventsDisplay.text;
+				[defaults setObject:tmp forKey:@"list"];
+        	}
+        	
+			//saves the data
+			[defaults synchronize];
+		}
+	}
 }
+
 
 -(void)onRightSwipe:(UISwipeGestureRecognizer*)recognizer
 {
