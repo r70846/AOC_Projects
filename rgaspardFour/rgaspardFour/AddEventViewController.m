@@ -21,8 +21,6 @@
 @end
 
 @implementation AddEventViewController
-@synthesize inputField, picker;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -65,31 +63,39 @@
 {
     if(recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
-        NSLog(@"Left Swiped on event add page!");
+        
+        [self performSegueWithIdentifier:@"unwindToMainView" sender:self];
+        
+        //NSLog(@"Left Swiped on event add page!");
     }
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    //Create reference to main view controller
-    ViewController *mainVC = [segue destinationViewController];
     
-    //Create format for users date and time choice
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    if (dateFormatter != nil)
+    if([segue.identifier isEqualToString:@"unwindToMainView"])
     {
-        [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
-    }
+        //Create reference to main view controller
+        ViewController *mainVC = [segue destinationViewController];
     
-    //Build the chosen date into a string based on my format
-    NSString *dateTime = [[NSString alloc] initWithFormat:@"%@", [dateFormatter stringFromDate: picker.date]];
+        //Create format for users date and time choice
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        if (dateFormatter != nil)
+        {
+            [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
+        }
+    
+        //Build the chosen date into a string based on my format
+        NSString *dateTime = [[NSString alloc] initWithFormat:@"%@", [dateFormatter stringFromDate: picker.date]];
     
     
-    //Fold the event text and formatted date string into a single text string & return to main view
-    NSString *eventText = [[NSString alloc] initWithFormat:@"%@%@%@", inputField.text, @"\n", dateTime];
+        //Fold the event text and formatted date string into a single text string & return to main view
+        NSString *eventText = [[NSString alloc] initWithFormat:@"%@%@%@", inputField.text, @"\n", dateTime];
     
         mainVC.inputText = eventText;
+        
+    }
 }
 
 

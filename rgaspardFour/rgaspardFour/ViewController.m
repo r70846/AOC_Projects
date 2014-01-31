@@ -90,6 +90,9 @@
 
 -(IBAction)onClick:(id)selector
 {
+    
+    NSLog(@"MAde it here!");
+    
     //Save full even tlist to user defultd (Built in dictionary)
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(defaults != nil)
@@ -106,7 +109,9 @@
 {
     if(recognizer.direction == UISwipeGestureRecognizerDirectionRight)
     {
-        NSLog(@"Right Swiped on home page!");
+        //NSLog(@"Right Swiped on home page!");
+        
+        [self performSegueWithIdentifier:@"AddEventSegue" sender:self];
     }
 }
 

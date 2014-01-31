@@ -20,6 +20,10 @@
 
 @interface AddEventViewController : UIViewController
 {
+    
+    
+    IBOutlet UITextField *inputField;
+    IBOutlet UIDatePicker *picker;
 
     IBOutlet UILabel *swipeLabelLeft;
     
@@ -27,19 +31,7 @@
     UISwipeGestureRecognizer *leftSwiper;
 }
 
-//Get access to text field
-@property IBOutlet UITextField *inputField;
-
-
-
-//Get access to date/time picker
-@property IBOutlet UIDatePicker *picker;
-
-
-
 //Define function to catch button clicks on event view
 -(IBAction)onClick:(id)sender;
-
-
 
 @end
