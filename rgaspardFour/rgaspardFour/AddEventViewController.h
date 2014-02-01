@@ -34,4 +34,7 @@
 //Define function to catch button clicks on event view
 -(IBAction)onClick:(id)sender;
 
+//Define function to show error message
+-(void)DisplayAlertWithString:(NSString*)string;
+
 @end

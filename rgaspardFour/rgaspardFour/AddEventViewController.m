@@ -64,9 +64,29 @@
     if(recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
         
-        [self performSegueWithIdentifier:@"unwindToMainView" sender:self];
-        
-        //NSLog(@"Left Swiped on event add page!");
+        //Do some minimal data validation
+        if(![inputField.text isEqualToString:@""])
+        {
+            //If text field is not left blankreturn to main view
+            [self performSegueWithIdentifier:@"unwindToMainView" sender:self];
+        }
+        else
+        {
+              [self DisplayAlertWithString: @"Error: Please add an event!"];
+            //alert(@"Error: Please add an event!");
+        }
+    }
+}
+
+
+-(void)DisplayAlertWithString:(NSString*)string
+{
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message: string delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    if(alertView != nil)
+    {
+        [alertView show];
     }
 }
 
@@ -78,25 +98,26 @@
     {
         //Create reference to main view controller
         ViewController *mainVC = [segue destinationViewController];
-    
+        
         //Create format for users date and time choice
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         if (dateFormatter != nil)
         {
             [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
         }
-    
+        
         //Build the chosen date into a string based on my format
         NSString *dateTime = [[NSString alloc] initWithFormat:@"%@", [dateFormatter stringFromDate: picker.date]];
-    
-    
+        
+        
         //Fold the event text and formatted date string into a single text string & return to main view
         NSString *eventText = [[NSString alloc] initWithFormat:@"%@%@%@", inputField.text, @"\n", dateTime];
-    
+        
         mainVC.inputText = eventText;
         
     }
 }
+
 
 
 
